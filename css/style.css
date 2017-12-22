@@ -1,0 +1,237 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #8d6e63;
+  font-size: 14px;
+  padding-top: 90px;
+  font-family: Sintony, sans-serif;
+}
+
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.4);
+}
+
+.header-inner {
+  padding-top: 10px;
+  width: 900px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.header-inner h1.title {
+  font-family: Quicksand;
+  font-size: 3em;
+  font-weight: 400;
+  color: #aaa;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 900px;
+}
+
+.col {
+  float: left;
+  height: 500px;
+  padding: 8px;
+}
+
+.col h2 {
+  font-weight: 400;
+  font-size: 1.5em;
+  text-align: center;
+  color: #aaa;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  margin-bottom: 0.5em;
+  padding: 4px;
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.4);
+}
+
+.col h3 {
+  font-weight: 400;
+  font-size: 1.1em;
+  margin-bottom: 0.3em;
+}
+
+.col-1 {
+  width: 20%;
+}
+
+.col-1 .presets {
+  text-align: center;
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+
+.col-1 .presets span.preset {
+  display: inline-block;
+  background-color: #333;
+  color: #aaa;
+  font-size: 1.1em;
+  padding: 5px 7px;
+  margin: 0 4px 6px 0;
+  border-radius: 2px;
+}
+
+.col-1 .choices {
+  overflow: auto;
+  margin-bottom: 0.5em;
+}
+
+.col-1 .choices .choice-wrap {
+  overflow: auto;
+  margin-bottom: 0.2em;
+}
+
+.col-1 .choices .choice {
+  float: left;
+  width: 29px;
+  height: 29px;
+  font-size: 0.8em;
+  margin-left: 6px;
+  background-color: rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+input[type="range"] {
+  float: left;
+  display: block;
+  margin: 4px 0;
+  width: 128px;
+}
+
+#choice-color {
+  width: 100%;
+  height: 40px;
+  background-color: rgb(0, 0, 0);
+  margin-bottom: 0.5em;
+}
+
+.col-1 .colors,
+.col-2 .colors {
+  text-align: center;
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+
+.col-1 .colors {
+  text-align: left;
+  margin-left: 11px;
+}
+
+.col-1 .colors .color p,
+.col-2 .colors .color p {
+  text-align: center;
+  margin-top: 3px;
+  font-size: 2em;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.col-1 .colors span.color,
+.col-2 .colors span.color {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  margin: 0 3px 3px 0;
+  border: 2px solid #333;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.col-2 .colors span.color.c6 img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.col-2 .colors span.color.active {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/331813/checkmark.png");
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+
+.col-2 {
+  width: 20%;
+}
+
+.data {
+  padding-left: 12px;
+  margin-bottom: 12px;
+}
+
+#grid {
+  width: 100%;
+  text-align: center;
+  line-height: 13px;
+  cursor: pointer;
+}
+
+#grid span {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: 0 1px;
+}
+
+#grid span:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+  content: "";
+}
+
+#grid span:hover:before {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.col-3 {
+  width: 60%;
+}
+
+#preview {
+  margin: 0 auto 12px auto;
+  width: 160px;
+  height: 160px;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+#preview span {
+  position: relative;
+  display: block;
+  float: left;
+  width: 5px;
+  height: 5px;
+}
+
+#debug {
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+}
