@@ -11,6 +11,9 @@ var activeColor,
     "rgb(40,40,40)"
   ];
 
+
+let isDrawing = false;
+
 //Clear the grid and preview areas
 var clearViews = function() {
   $("#grid span").css("background-color", "rgba(0,0,0,0)");
@@ -26,6 +29,7 @@ var makeActive = function(c) {
 
 //Color a pixel
 var colorAPixel = function(g) {
+  isDrawing = true;
   g.css("background-color", activeColor);
   var pixel = g.attr("class");
   $("#preview span." + pixel).css("background-color", activeColor);
@@ -84,8 +88,6 @@ var pixelText = function(p) {
 var pixelTextClear = function(p) {
   $("#pixel-no").html("&nbsp;");
 };
-
-//Surely I can condense these next 3 preset functions.
 
 //Draw the Link preset
 var drawLink = function() {
@@ -203,9 +205,25 @@ $(document).ready(function() {
   // });
 
   //Color a pixel
-  $("#grid span").on("mouseover", function() {
+  $("#grid span").on("mousedown", function() {
     colorAPixel($(this));
+
+     isDrawing = true; 
+
+    if (isDrawing) {
+      $("#grid span").on("mouseover", function() {
+        colorAPixel($(this));
+      });
+    }
+
+    // Stop drawing
+    $('body').on('mouseup', function () {
+        isDrawing = false;
+        $('span').off('mouseover');
+    });
   });
+
+
 
   //When the 'Clear the Grid' preset is chosen...
   $("#clear-preset").click(function() {
@@ -229,8 +247,6 @@ $(document).ready(function() {
     clearViews();
     drawHeis();
   });
-
-  //Hmm, how can I make these next 8 mouse functions dry?
 
   //Display a color code when a pixel is hovered
   $("#grid span").mouseenter(function() {
